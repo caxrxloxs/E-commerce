@@ -7,7 +7,7 @@ const pageTitle = "E-COMMERCE";
 // 1. estraigo la informacion de la API y la guardo en data
 const response = await fetch('https://dummyjson.com/products/category/smartphones');
 const data = await response.json();
-
+const accesibilidadWeb ="No se pudo cargar la imagen";
 
 ---
 
@@ -22,6 +22,7 @@ const data = await response.json();
         title={product.title}
         description={product.description}
         imageUrl={product.images[0]}
+		imageAlt={accesibilidadWeb}
       />
     ))
 	}

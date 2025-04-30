@@ -98,10 +98,39 @@ html {
 
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem 0;
+    /* con esto queda responsivo en cualquier dispositivo sin MQ
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));*/
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
   }
+
+  @media (min-width: 768px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+      gap: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+  }
+  /* Escritorios medianos (1440px) */
+@media (min-width: 1440px) {
+    .card-grid {
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+      gap: 2rem;
+    }
+  }
+  /* Escritorios grandes (1920px+) */
+@media (min-width: 1920px) {
+    .card-grid {
+      grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+    }
+  }
+
+
   h1 {
     text-align: center;
     color: #1e293b;
